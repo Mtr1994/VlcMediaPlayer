@@ -5,6 +5,9 @@
 #include <QFileInfo>
 #include <QStandardItem>
 
+// test
+#include <QDebug>
+
 WidgetMediaPathList::WidgetMediaPathList(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::WidgetMediaPathList)
