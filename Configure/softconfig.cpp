@@ -1,6 +1,9 @@
 ﻿#include "softconfig.h"
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QTextCodec>
+#endif
+
 #include <QFile>
 
 SoftConfig::SoftConfig(QObject *parent) : QObject(parent)
@@ -18,8 +21,9 @@ bool SoftConfig::init()
     }
 
     mSetting = new QSettings("conf.ini", QSettings::IniFormat);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     mSetting->setIniCodec(QTextCodec::codecForName("utf-8"));
-
+#endif
     return true;
 }
 

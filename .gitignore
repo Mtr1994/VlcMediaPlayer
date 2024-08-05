@@ -23,7 +23,7 @@ Makefile*
 # Qt unit tests
 target_wrapper.*
 
-Output
+build
 
 # QtCreator
 *.autosave

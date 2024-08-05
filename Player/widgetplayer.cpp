@@ -44,7 +44,7 @@ void WidgetPlayer::play(const QString &path)
     }
     mMediaPath = path;
 
-    m = libvlc_media_new_location(inst, path.toStdString().data());
+    m = libvlc_media_new_path(inst, path.toStdString().data());
     mp = libvlc_media_player_new_from_media(m);
 
     attachEvents();

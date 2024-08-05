@@ -60,7 +60,7 @@ void MainWindow::init()
 
     // 默认测试播放
     //emit AppSignal::getInstance()->sgl_start_play_target_media("http://101.34.253.220/image/upload/video/Demo.mp4");
-    emit AppSignal::getInstance()->sgl_start_play_target_media("screen://");
+    //emit AppSignal::getInstance()->sgl_start_play_target_media("screen://");
 }
 
 void MainWindow::slot_start_play_video()

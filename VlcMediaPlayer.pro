@@ -1,10 +1,10 @@
-QT += core gui
+QT += core gui openglwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-QMAKE_CXXFLAGS += -execution-charset:utf-8
+lessThan(QT_MAJOR_VERSION, 6): QMAKE_CXXFLAGS += -execution-charset:utf-8
 
 # make the application have authority of running on Ubuntu, and I do not know why it works
 unix: QMAKE_LFLAGS += -no-pie
