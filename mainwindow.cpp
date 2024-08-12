@@ -8,7 +8,7 @@
 #include <QKeyEvent>
 #include <QFileDialog>
 #include <QStandardPaths>
-#include <QFontMetrics>
+#include <QScreen>
 
 // test
 #include <QDebug>
@@ -32,8 +32,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::init()
 {
-    QFontMetrics fontMetrics(QFont("Microsoft YaHei", 9));
-    resize(fontMetrics.height() * 64, fontMetrics.height() * 64 * 0.618);
+    float w = screen()->logicalDotsPerInch() * 13 * (screen()->physicalDotsPerInch() / 96.0);
+    resize(w / devicePixelRatio(), w * 0.618 / devicePixelRatio());
 
     connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::slot_open_video_file);
     connect(ui->actionClose, &QAction::triggered, this, &MainWindow::slot_close_video_file);
