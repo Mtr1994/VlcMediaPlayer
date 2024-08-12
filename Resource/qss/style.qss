@@ -236,10 +236,10 @@ QPushButton#btnMediaList:pressed
 }
 
 /* QSlider */
+/* QSlider */
 QSlider
 {
     border: none;
-    height: 1.2em;
     min-width: 4.8em;
     background-color: transparent;
 }
@@ -264,18 +264,16 @@ QSlider::handle:horizontal
 
 QSlider::handle:horizontal:hover
 {
-    background-color: #d0d0d0;
+    border: 1px solid #d0d0d0;
 }
 
 QSlider::add-page:horizontal
 {
-    border-radius: 0.12em;
     background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #33bcbcbc, stop:0.25 #33bcbcbc, stop:0.5 #33bcbcbc, stop:1 #33bcbcbc);
 }
 
 QSlider::sub-page:horizontal
 {
-    border-radius: 0.12em;
     background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
 }
 

@@ -37,6 +37,8 @@ private:
     libvlc_instance_t *inst = nullptr;
     libvlc_media_player_t *mp = nullptr;
     libvlc_media_t *m = nullptr;
+
+    float mMediaVolume = 100.0;
 };
 
 #endif // WIDGETPLAYER_H

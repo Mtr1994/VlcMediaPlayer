@@ -32,6 +32,8 @@ void WidgetPlayer::init()
     libvlc_set_log_verbosity(inst, LIBVLC_ERROR);
 
     libvlc_log_set(inst, libvlc_log_event_handler, nullptr);
+
+    mMediaVolume = SoftConfig::getInstance()->getValue("Volume", "value").toUInt();
 }
 
 void WidgetPlayer::play(const QString &path)
@@ -39,7 +41,7 @@ void WidgetPlayer::play(const QString &path)
     if (nullptr == inst) return;
     if (nullptr != mp)
     {
-        libvlc_media_player_stop(mp);
+        if (libvlc_media_player_get_state(mp) < libvlc_Stopped) libvlc_media_player_stop(mp);
         libvlc_media_player_release(mp);
     }
     mMediaPath = path;
@@ -61,6 +63,7 @@ void WidgetPlayer::play(const QString &path)
     int length = libvlc_media_player_get_length(mp);
     emit AppSignal::getInstance()->sgl_init_media_duration(length);
 
+    libvlc_audio_set_volume(mp, mMediaVolume * 1.5);
     libvlc_media_player_play(mp);
 }
 
@@ -93,8 +96,10 @@ void WidgetPlayer::stop()
 
 void WidgetPlayer::setAudioVolume(float volume)
 {
+    mMediaVolume = volume;
     if (nullptr == inst) return;
-    libvlc_audio_set_volume(mp, volume * 1.5);
+    if (nullptr == mp) return;
+    libvlc_audio_set_volume(mp, mMediaVolume * 1.5);
 }
 
 void WidgetPlayer::grap()
