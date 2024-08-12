@@ -247,7 +247,7 @@ QSlider
 QSlider::groove:horizontal
 {
     border: none;
-    height: 0.2em;
+    height: 2px;
     margin: 0px 0px;
     left: 0.5em;
     right: 0.5em;
@@ -255,11 +255,11 @@ QSlider::groove:horizontal
 
 QSlider::handle:horizontal
 {
-    border: none;
+    border: 1px solid #e0e0e0;
     background-color: #fefefe;
-    width: 1.2em;
-    margin: -0.5em;
-    border-radius: 0.56em;
+    width: 16px;
+    margin: -8px 0.0em -8px 0.0em;
+    border-radius: 8px;
 }
 
 QSlider::handle:horizontal:hover
